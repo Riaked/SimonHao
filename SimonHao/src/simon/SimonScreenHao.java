@@ -7,8 +7,7 @@ import guiPractice.ClickableScreen;
 import guiPractice.components.Action;
 import guiPractice.components.Button;
 import guiPractice.components.Visible;
-import guiPractice.sampleGames.TextLabel;
-import guiPractice.whackAMole.MoleInterface;
+import guiPractice.components.TextLabel;
 
 public class SimonScreenHao extends ClickableScreen implements Runnable {
 
