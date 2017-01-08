@@ -1,8 +1,6 @@
 package simon;
 
 import guiPractice.GUIApplication;
-import guiPractice.whackAMole.WhackAMoleGame;
-import guiPractice.whackAMole.WhackAMoleScreen;
 
 public class SimonGameHao extends GUIApplication {
 

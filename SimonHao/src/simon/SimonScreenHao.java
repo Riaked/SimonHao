@@ -28,7 +28,7 @@ public class SimonScreenHao extends ClickableScreen implements Runnable {
 
 	@Override
 	public void initAllObjects(ArrayList<Visible> viewObjects){
-		addButtons();
+		addButtons(viewObjects);
 		move = new ArrayList<MoveInterfaceHao>();
 		progress = getProgress();
 		label = new TextLabel(getWidth(), getHeight(), 120, 60, "This is Simon's game");
@@ -50,7 +50,7 @@ public class SimonScreenHao extends ClickableScreen implements Runnable {
 		return getMove(rand);
 	}
 
-	private void addButtons() {
+	private void addButtons(ArrayList<Visible> viewObjects) {
 		int numberOfButtons = 5;
 		button = new ButtonInterfaceHao[numberOfButtons];
 		Color[] colors = {Color.red, Color.orange, Color.blue, Color.green, Color.magenta};
