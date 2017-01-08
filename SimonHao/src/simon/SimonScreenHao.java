@@ -117,16 +117,6 @@ public class SimonScreenHao extends ClickableScreen implements Runnable {
 	public void run() {
 		label.setText("");
 		nextRound();
-		progress.setRound(roundNumber);
-		move.add(randomMove());
-		progress.setSequenceLength(move.size());
-		changeText("Simon's turn.");
-		label.setText("");
-		playSequence();
-		changeText("Your turn.");
-		label.setText("");
-		inputSubmitted = true;
-		sequenceNumber = 0;
 	}
 
 	private void playSequence() {
@@ -147,6 +137,16 @@ public class SimonScreenHao extends ClickableScreen implements Runnable {
 	private void nextRound() {
 		inputSubmitted = false;
 		roundNumber++;
+		progress.setRound(roundNumber);
+		move.add(randomMove());
+		progress.setSequenceLength(move.size());
+		changeText("Simon's turn.");
+		label.setText("");
+		playSequence();
+		changeText("Your turn.");
+		label.setText("");
+		inputSubmitted = true;
+		sequenceNumber = 0;
 	}
 
 	private void changeText(String s){
