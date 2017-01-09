@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import guiPractice.ClickableScreen;
 import guiPractice.components.Action;
 import guiPractice.components.Button;
-import guiPractice.components.Visible;
 import guiPractice.components.TextLabel;
+import guiPractice.components.Visible;
 
 public class SimonScreenHao extends ClickableScreen implements Runnable {
 
