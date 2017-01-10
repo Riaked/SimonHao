@@ -3,9 +3,10 @@ package simon;
 import java.awt.Color;
 import java.util.ArrayList;
 
+import simon.Move;
 import guiPractice.ClickableScreen;
 import guiPractice.components.Action;
-
+import guiPractice.components.Button;
 import guiPractice.components.TextLabel;
 import guiPractice.components.Visible;
 
@@ -28,8 +29,8 @@ public class SimonScreenHao extends ClickableScreen implements Runnable {
 
 	@Override
 	public void initAllObjects(ArrayList<Visible> viewObjects){
-		addButtons(viewObjects);
 		move = new ArrayList<MoveInterfaceHao>();
+		addButtons(viewObjects);
 		progress = getProgress();
 		label = new TextLabel(getWidth(), getHeight(), 120, 60, "This is Simon's game");
 		previousButton = -1;
@@ -40,17 +41,17 @@ public class SimonScreenHao extends ClickableScreen implements Runnable {
 		viewObjects.add(progress);
 	}
 	
-	private MoveInterfaceHao randomMove() {
+	public MoveInterfaceHao randomMove() {
 		int rand;
 		rand = (int) (Math.random() * button.length);
 		while (rand == previousButton){
 			rand = (int) (Math.random() * button.length);
 		}
 		previousButton = rand;
-		return getMove(rand);
+		return new Move(button[rand]);
 	}
 
-	private void addButtons(ArrayList<Visible> viewObjects) {
+	public void addButtons(ArrayList<Visible> viewObjects) {
 		int numberOfButtons = 5;
 		button = new ButtonInterfaceHao[numberOfButtons];
 		Color[] colors = {Color.red, Color.orange, Color.blue, Color.green, Color.magenta};
@@ -59,7 +60,8 @@ public class SimonScreenHao extends ClickableScreen implements Runnable {
 			button[i].setColor(colors[i]);
 			button[i].setX(160 + (int)(100*Math.cos(i*2*Math.PI/(numberOfButtons))));
 			button[i].setY(200 - (int)(100*Math.sin(i*2*Math.PI/(numberOfButtons))));
-			final ButtonInterfaceHao b = getAButton();
+			final ButtonInterfaceHao b = button[i];
+			b.dim();
 			b.setAction(new Action(){
 				public void act() {
 					if (inputSubmitted){
@@ -95,21 +97,18 @@ public class SimonScreenHao extends ClickableScreen implements Runnable {
 		}
 	}
 
+	private ButtonInterfaceHao getAButton() {
+		// TODO Auto-generated method stub
+		return new Button();
+	}
+
 	public void gameOver(){
 		progress.gameOver();
 	}
 	
-	private ButtonInterfaceHao getAButton() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	public ProgressInterfaceHao getProgress(){
-		return null;
-	}
-	
-	public MoveInterfaceHao getMove(int r){
-		return null;
+		return new Progress();
 	}
 	
 	@Override

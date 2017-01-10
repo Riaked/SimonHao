@@ -21,37 +21,42 @@ public class Button extends Component implements ButtonInterfaceHao {
 		super(0,0,WIDTH,HEIGHT);
 	}
 
-	public boolean isHovered(int x, int y) {
-		double distance = Math.sqrt(Math.pow(x-(getX()+WIDTH/2), 2)+Math.pow(y-(getY()+HEIGHT/2), 2));
-		return distance < WIDTH/2;
-	}
-
-	public void act() {
-		act.act();
-	}
-
-
-
-	public void setColor(Color color) {
-		this.c = color;
-		dispColor = c;
-		update();
-	}
-
+	@Override
 	public void highlight() {
 		if(c != null) dispColor = c;
 		highlight = true;
 		update();
 	}
 
+	@Override
 	public void dim() {
 		dispColor = Color.gray;
 		highlight = false;
 		update();
 	}
 
+	@Override
 	public void setAction(Action action) {
 		this.act = action;
+	}
+
+	@Override
+	public void act() {
+		act.act();
+		
+	}
+
+	@Override
+	public boolean isHovered(int x, int y) {
+		double distance = Math.sqrt(Math.pow(x-(getX()+WIDTH/2), 2)+Math.pow(y-(getY()+HEIGHT/2), 2));
+		return distance < WIDTH/2;
+	}
+
+	@Override
+	public void setColor(Color color) {
+		this.c = color;
+		dispColor = c;
+		update();
 	}
 
 	@Override
@@ -65,7 +70,6 @@ public class Button extends Component implements ButtonInterfaceHao {
 		if(highlight){
 			g.setColor(Color.white);
 			Polygon p = new Polygon();
-			
 			int s = (int)(5/8.0 * WIDTH);
 			int t = (int)(1.0/5*HEIGHT)+4;
 			p.addPoint(s-4, t-4);
@@ -76,10 +80,9 @@ public class Button extends Component implements ButtonInterfaceHao {
 			p.addPoint(s+8, t+3);
 			g.fill(p);
 		}
-		
 	}
 
-	
+
 	private String name;
 	public void setName(String s){
 		this.name = s;
@@ -88,5 +91,4 @@ public class Button extends Component implements ButtonInterfaceHao {
 	public String toString(){
 		return name;
 	}
-
 }
