@@ -17,7 +17,7 @@ public class Progress extends Component implements ProgressInterfaceHao {
 	private String sequence;
 
 	public Progress() {
-		super(260,60,WIDTH,HEIGHT);
+		super(60,200,WIDTH,HEIGHT);
 	}
 
 
