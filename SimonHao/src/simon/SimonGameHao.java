@@ -5,7 +5,7 @@ import guiPractice.GUIApplication;
 public class SimonGameHao extends GUIApplication {
 	
 	public SimonGameHao() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 
 	@Override

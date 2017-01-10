@@ -81,14 +81,4 @@ public class Button extends Component implements ButtonInterfaceHao {
 			g.fill(p);
 		}
 	}
-
-
-	private String name;
-	public void setName(String s){
-		this.name = s;
-	}
-	
-	public String toString(){
-		return name;
-	}
 }

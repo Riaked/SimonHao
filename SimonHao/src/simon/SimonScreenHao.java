@@ -3,10 +3,8 @@ package simon;
 import java.awt.Color;
 import java.util.ArrayList;
 
-import simon.Move;
 import guiPractice.ClickableScreen;
 import guiPractice.components.Action;
-import guiPractice.components.Button;
 import guiPractice.components.TextLabel;
 import guiPractice.components.Visible;
 
@@ -98,7 +96,6 @@ public class SimonScreenHao extends ClickableScreen implements Runnable {
 	}
 
 	private ButtonInterfaceHao getAButton() {
-		// TODO Auto-generated method stub
 		return new Button();
 	}
 
