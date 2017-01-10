@@ -4,6 +4,11 @@ import guiPractice.GUIApplication;
 
 public class SimonGameHao extends GUIApplication {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2941468541286501763L;
+
 	public SimonGameHao() {
 		// TODO Auto-generated constructor stub
 	}
