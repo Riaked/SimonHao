@@ -14,7 +14,7 @@ public class Progress extends Component implements ProgressInterfaceHao {
 
 	private boolean gameOver;
 	private String round;
-	private String sequence;
+	private String seq;
 
 	public Progress() {
 		super(60,200,WIDTH,HEIGHT);
@@ -28,7 +28,7 @@ public class Progress extends Component implements ProgressInterfaceHao {
 	}
 
 	public void setSequenceLength(int size) {
-		sequence = "Sequence length "+size;
+		seq = "Sequence length "+size;
 		update();
 	}
 
@@ -49,17 +49,16 @@ public class Progress extends Component implements ProgressInterfaceHao {
 			g.setColor(Color.white);
 			String go = "GAME OVER!";
 			g.drawString(go, (WIDTH - fm.stringWidth(go))/2, 20);
-			g.drawString(sequence, (WIDTH - fm.stringWidth(sequence))/2, 40);
+			g.drawString(seq, (WIDTH - fm.stringWidth(seq))/2, 40);
 
 		}else{
 			g.setColor(new Color(220,255,230));
 			g.fillRect(0, 0, WIDTH, HEIGHT);
 			g.setColor(Color.black);
 			g.drawRect(0, 0, WIDTH-1, HEIGHT-1);
-			if(round !=null && sequence != null){
-
+			if(round !=null && seq != null){
 				g.drawString(round, (WIDTH - fm.stringWidth(round))/2, 20);
-				g.drawString(sequence, (WIDTH - fm.stringWidth(sequence))/2, 40);
+				g.drawString(seq, (WIDTH - fm.stringWidth(seq))/2, 40);
 			}
 		}
 	}
