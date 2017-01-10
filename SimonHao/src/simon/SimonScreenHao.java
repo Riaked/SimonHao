@@ -56,8 +56,8 @@ public class SimonScreenHao extends ClickableScreen implements Runnable {
 		for (int i = 0; i < numberOfButtons; i++){
 			button[i] = getAButton();
 			button[i].setColor(colors[i]);
-			button[i].setX(160 + (int)(100*Math.cos(i*2*Math.PI/(numberOfButtons))));
-			button[i].setY(200 - (int)(100*Math.sin(i*2*Math.PI/(numberOfButtons))));
+			button[i].setX(260 + (int)(100*Math.cos(i*2*Math.PI/(numberOfButtons))));
+			button[i].setY(220 - (int)(100*Math.sin(i*2*Math.PI/(numberOfButtons))));
 			final ButtonInterfaceHao b = button[i];
 			b.dim();
 			b.setAction(new Action(){
